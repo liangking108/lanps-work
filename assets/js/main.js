@@ -1,7 +1,7 @@
 /* =========================================================
    LaNPs — 交互脚本（原生 JavaScript，无任何依赖）
    包含：导航状态 / 移动端菜单 / 滚动揭示 / 数字滚动
-        / 阅读进度 / 当前区块高亮
+        / 阅读进度 / 当前区块高亮 / 指针视差 / 作品图集
    ========================================================= */
 
 (function () {
@@ -186,6 +186,102 @@
     { passive: true }
   );
 
+
+  /* ---------- 7.5 首屏入场与精密指针交互 ---------- */
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var hero = document.querySelector('.hero');
+
+  if (hero) {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        hero.classList.add('is-ready');
+      });
+    });
+  }
+
+  if (hero && finePointer.matches && !reduceMotion) {
+    var heroRect = null;
+    var heroFrame = 0;
+    var heroPointer = { x: 0, y: 0 };
+
+    function renderHeroPointer() {
+      hero.classList.add('is-pointer');
+      hero.style.setProperty('--glow-x', (heroPointer.x * 16).toFixed(2) + 'px');
+      hero.style.setProperty('--glow-y', (heroPointer.y * 12).toFixed(2) + 'px');
+      hero.style.setProperty('--grid-x', (heroPointer.x * -8).toFixed(2) + 'px');
+      hero.style.setProperty('--grid-y', (heroPointer.y * -8).toFixed(2) + 'px');
+      heroFrame = 0;
+    }
+
+    hero.addEventListener('pointermove', function (e) {
+      if (!heroRect) heroRect = hero.getBoundingClientRect();
+      heroPointer.x = Math.max(-1, Math.min(1, ((e.clientX - heroRect.left) / heroRect.width - 0.5) * 2));
+      heroPointer.y = Math.max(-1, Math.min(1, ((e.clientY - heroRect.top) / heroRect.height - 0.5) * 2));
+      if (!heroFrame) heroFrame = requestAnimationFrame(renderHeroPointer);
+    });
+
+    hero.addEventListener('pointerleave', function () {
+      hero.classList.remove('is-pointer');
+      hero.style.setProperty('--glow-x', '0px');
+      hero.style.setProperty('--glow-y', '0px');
+      hero.style.setProperty('--grid-x', '0px');
+      hero.style.setProperty('--grid-y', '0px');
+    });
+
+    window.addEventListener('resize', function () {
+      heroRect = null;
+    }, { passive: true });
+  }
+
+  var tiltCards = document.querySelectorAll('[data-tilt]');
+
+  if (finePointer.matches && !reduceMotion) {
+    tiltCards.forEach(function (card) {
+      var frame = 0;
+      var pointer = { x: 0, y: 0 };
+      var cardRect = null;
+
+      function renderTilt() {
+        card.style.setProperty('--tilt-x', (-pointer.y * 1.25).toFixed(2) + 'deg');
+        card.style.setProperty('--tilt-y', (pointer.x * 1.25).toFixed(2) + 'deg');
+        card.style.setProperty('--mx', ((pointer.x + 1) * 50).toFixed(1) + '%');
+        card.style.setProperty('--my', ((pointer.y + 1) * 50).toFixed(1) + '%');
+        card.style.setProperty('--mark-x', (pointer.x * 8).toFixed(1) + 'px');
+        card.style.setProperty('--mark-y', (pointer.y * 5).toFixed(1) + 'px');
+        frame = 0;
+      }
+
+      card.addEventListener('pointermove', function (e) {
+        if (!cardRect) cardRect = card.getBoundingClientRect();
+        pointer.x = Math.max(-1, Math.min(1, ((e.clientX - cardRect.left) / cardRect.width) * 2 - 1));
+        pointer.y = Math.max(-1, Math.min(1, ((e.clientY - cardRect.top) / cardRect.height) * 2 - 1));
+        if (!frame) frame = requestAnimationFrame(renderTilt);
+      });
+
+      card.addEventListener('pointerleave', function () {
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+        card.style.setProperty('--mx', '50%');
+        card.style.setProperty('--my', '50%');
+        card.style.setProperty('--mark-x', '0px');
+        card.style.setProperty('--mark-y', '0px');
+      });
+
+      window.addEventListener('resize', function () {
+        cardRect = null;
+      }, { passive: true });
+    });
+  }
+
+  var desktopQuery = window.matchMedia('(min-width: 721px)');
+  function handleDesktopResize(e) {
+    if (e.matches) closeMenu();
+  }
+  if (typeof desktopQuery.addEventListener === 'function') {
+    desktopQuery.addEventListener('change', handleDesktopResize);
+  } else if (typeof desktopQuery.addListener === 'function') {
+    desktopQuery.addListener(handleDesktopResize);
+  }
   /* ---------- 8. 邮箱一键复制 ---------- */
   var copyBtn = document.querySelector('[data-copy-email]');
 
@@ -266,9 +362,11 @@
       activeSet.title + ' · ' + item.label + '  ·  ' +
       (galleryIndex + 1) + ' / ' + activeSet.items.length;
 
-    var thumbs = galleryThumbs.querySelectorAll('img');
-    thumbs.forEach(function (img, i) {
-      img.classList.toggle('is-active', i === galleryIndex);
+    var thumbs = galleryThumbs.querySelectorAll('button');
+    thumbs.forEach(function (thumb, i) {
+      var isActive = i === galleryIndex;
+      thumb.classList.toggle('is-active', isActive);
+      thumb.setAttribute('aria-current', isActive ? 'true' : 'false');
     });
   }
 
@@ -276,9 +374,13 @@
     if (!galleryThumbs) return;
     galleryThumbs.innerHTML = '';
     activeSet.items.forEach(function (item, i) {
-      var thumb = document.createElement('img');
-      thumb.src = item.src;
-      thumb.alt = item.label;
+      var thumb = document.createElement('button');
+      var image = document.createElement('img');
+      thumb.type = 'button';
+      thumb.setAttribute('aria-label', '查看：' + item.label);
+      image.src = item.src;
+      image.alt = '';
+      thumb.appendChild(image);
       (function (index) {
         thumb.addEventListener('click', function () {
           galleryIndex = index;

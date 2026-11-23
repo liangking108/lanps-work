@@ -2,3 +2,10 @@
 Thumbs.db
 *.log
 node_modules/
+shots/
+.edge-cdp/
+.edge-profile*/
+*.local.png
+serve.cjs
+qa.mjs
+qa-interactions.mjs
