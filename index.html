@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LaNPs — 梁皓钧 / 产品设计出身的前端开发者</title>
+<meta name="description" content="梁皓钧（LaNPs），产品设计出身的前端开发者。擅长把设计意图落地成可上线的网站，用 AI 压缩从想法到交付的距离。" />
+<meta name="theme-color" content="#0E0F0E" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="LaNPs — 梁皓钧 / 设计出身的前端开发者" />
+<meta property="og:description" content="从设计到上线，一个人做完。" />
+<meta property="og:url" content="https://LaNPswork.com" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F0E'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='18' font-weight='700' fill='%23FF5A2B' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="LaNPs 首页">
+    LaNPs<span class="dot">.</span>
+  </a>
+
+  <nav class="nav__links" id="navLinks" aria-label="主导航">
+    <a href="#work" data-nav>作品</a>
+    <a href="#skills" data-nav>能力</a>
+    <a href="#desk" data-nav>工作台</a>
+    <a href="#about" data-nav>关于</a>
+    <a href="#contact" class="nav__cta" data-nav>聊聊 <span aria-hidden="true">↗</span></a>
+  </nav>
+
+  <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__glow"></div>
+      <div class="hero__grid"></div>
+    </div>
+
+    <div class="wrap hero__inner">
+      <p class="eyebrow reveal">
+        <span class="pulse" aria-hidden="true"></span>
+        贵阳 · 2026 届应届 · 正在找工作
+      </p>
+
+      <h1 class="hero__title">
+        <span class="reveal">从设计</span>
+        <span class="reveal">到上线，</span>
+        <span class="reveal hero__title--accent">一个人做完。</span>
+      </h1>
+
+      <div class="hero__meta">
+        <p class="hero__lead reveal">
+          我是<b>梁皓钧</b>，产品设计出身的前端开发者。
+          会建模、会排版、会写页面，习惯用 AI 把「想法 → 可点开的网站」的距离压到最短。
+        </p>
+
+        <div class="hero__actions reveal">
+          <a class="btn btn--solid" href="#work">看作品 <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--ghost" href="#contact">联系我</a>
+        </div>
+      </div>
+
+      <ul class="stats reveal" aria-label="关键数据">
+        <li>
+          <strong data-count="45" data-suffix=" 天">0</strong>
+          <span>首个产品从 0 到上线</span>
+        </li>
+        <li>
+          <strong data-count="3" data-suffix=" 年">0</strong>
+          <span>独立电商运营经验</span>
+        </li>
+        <li>
+          <strong data-count="3" data-suffix=" 端">0</strong>
+          <span>手机 / 平板 / 桌面适配</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>响应式布局</span>
+        <span>Rhino</span><span>Keyshot</span><span>Photoshop</span><span>AI 工作流</span>
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>响应式布局</span>
+        <span>Rhino</span><span>Keyshot</span><span>Photoshop</span><span>AI 工作流</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="section__num">01</span>
+        <h2 class="section__title reveal">作品</h2>
+        <p class="section__desc reveal">
+          三个项目，一条主线：<b>自己设计、自己写码、自己上线。</b>
+          状态如实标注，没做完的不吹。
+        </p>
+      </div>
+
+      <div class="works">
+
+        <article class="work reveal">
+          <div class="work__visual work__visual--a" aria-hidden="true">
+            <span class="work__mark">LaNPs</span>
+          </div>
+          <div class="work__body">
+            <div class="work__top">
+              <span class="tag tag--live">已上线</span>
+              <span class="work__year">2026</span>
+            </div>
+            <h3>LaNPs 作品集与工作台</h3>
+            <p>
+              你现在看的这一页。个人品牌站 + 工具入口，原生 HTML/CSS/JS 手写，
+              无框架、零运行时依赖。
+            </p>
+            <ul class="chips">
+              <li>语义化结构</li>
+              <li>Intersection Observer</li>
+              <li>三端响应式</li>
+              <li>无障碍适配</li>
+            </ul>
+            <a class="work__link" href="https://github.com/liangking108/lanps-work" target="_blank" rel="noopener">
+              查看源码 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="work work--reverse reveal">
+          <div class="work__visual work__visual--b" aria-hidden="true">
+            <span class="work__mark">AI</span>
+          </div>
+          <div class="work__body">
+            <div class="work__top">
+              <span class="tag tag--wip">已开发 · 待部署</span>
+              <span class="work__year">2026</span>
+            </div>
+            <h3>LaNPs 工具台</h3>
+            <p>
+              面向个人与小商家的轻量工具集：AI 文案生成、图片批量压缩、报价单生成。
+              Vue 3 + Vite，零后端依赖。
+            </p>
+            <ul class="chips">
+              <li>Vue 3</li>
+              <li>Vite</li>
+              <li>AI API 接入</li>
+              <li>Canvas</li>
+            </ul>
+            <span class="work__link work__link--off">随工具台上线开放</span>
+          </div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work__visual work__visual--c" aria-hidden="true">
+            <span class="work__mark">HERO</span>
+          </div>
+          <div class="work__body">
+            <div class="work__top">
+              <span class="tag tag--plan">规划中</span>
+              <span class="work__year">2026</span>
+            </div>
+            <h3>Hero 首屏复刻合集</h3>
+            <p>
+              长期拆解优秀站点的首屏，逐一重建：版式、留白、动效节奏。
+              比截图更有说服力的，是能点开的还原度。
+            </p>
+            <ul class="chips">
+              <li>版式分析</li>
+              <li>CSS 动效</li>
+              <li>视觉还原</li>
+            </ul>
+            <span class="work__link work__link--off">整理中</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section--alt" id="skills">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="section__num">02</span>
+        <h2 class="section__title reveal">能力</h2>
+        <p class="section__desc reveal">
+          我的组合不算常见：<b>设计师的眼睛 + 工程师的手。</b>
+        </p>
+      </div>
+
+      <div class="rows">
+        <div class="row reveal">
+          <span class="row__idx">01</span>
+          <div class="row__main">
+            <h3>前端开发</h3>
+            <p>
+              手写语义化 HTML、CSS Grid / Flex 布局与响应式断点；
+              用 JavaScript 做交互与滚动动效；会 Vite 构建、Git 版本管理、Vercel 部署。
+            </p>
+          </div>
+          <ul class="row__side">
+            <li>HTML / CSS / JS</li>
+            <li>响应式 · 性能优化</li>
+            <li>Vue 3 学习中</li>
+          </ul>
+        </div>
+
+        <div class="row reveal">
+          <span class="row__idx">02</span>
+          <div class="row__main">
+            <h3>视觉与三维</h3>
+            <p>
+              产品设计科班四年：用户研究、交互原型、视觉传达；
+              用 Rhino 建模、Keyshot 出渲染图、Photoshop 做后期，能从零画到成品图。
+            </p>
+          </div>
+          <ul class="row__side">
+            <li>Photoshop</li>
+            <li>Rhino</li>
+            <li>Keyshot</li>
+          </ul>
+        </div>
+
+        <div class="row reveal">
+          <span class="row__idx">03</span>
+          <div class="row__main">
+            <h3>AI 工作流</h3>
+            <p>
+              每天在用。拆需求、生成初版代码、定位 bug、批量出文案——
+              不是「会用 ChatGPT」，而是把它编进真实的交付流程里。
+            </p>
+          </div>
+          <ul class="row__side">
+            <li>Claude / ChatGPT</li>
+            <li>需求拆解</li>
+            <li>代码生成 · 调试</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESK ============ -->
+  <section class="section" id="desk">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="section__num">03</span>
+        <h2 class="section__title reveal">工作台</h2>
+        <p class="section__desc reveal">
+          站点不只是简历，也是我自己的开工台。<b>三个工具已经能跑，等部署。</b>
+        </p>
+      </div>
+
+      <div class="desk">
+        <a class="tool reveal" href="https://tools.LaNPswork.com" target="_blank" rel="noopener">
+          <span class="tool__icon" aria-hidden="true">01</span>
+          <h3>文案生成器</h3>
+          <p>输入产品一句话，产出标题、卖点、详情页文案。</p>
+          <span class="tool__state">已开发 · 待部署</span>
+        </a>
+        <a class="tool reveal" href="https://tools.LaNPswork.com" target="_blank" rel="noopener">
+          <span class="tool__icon" aria-hidden="true">02</span>
+          <h3>图片压缩</h3>
+          <p>批量压缩、尺寸适配、转 WebP，全程在本地处理。</p>
+          <span class="tool__state">已开发 · 待部署</span>
+        </a>
+        <a class="tool reveal" href="https://tools.LaNPswork.com" target="_blank" rel="noopener">
+          <span class="tool__icon" aria-hidden="true">03</span>
+          <h3>报价单生成</h3>
+          <p>按页面数量与复杂度拆价，一键导出可打印报价单。</p>
+          <span class="tool__state">已开发 · 待部署</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section section--alt" id="about">
+    <div class="wrap about">
+      <div class="about__left">
+        <span class="section__num">04</span>
+        <h2 class="section__title reveal">关于</h2>
+      </div>
+
+      <div class="about__right">
+        <p class="about__lead reveal">
+          产品设计是我的专业，但它当初不是我的第一选择。
+          <b>是被动进入，后来主动做好。</b>四年下来，审美成了我最稳的一只手。
+        </p>
+        <p class="reveal">
+          毕业回到贵阳。我不想去流水线上做重复劳动，想找一件能一直往上走的事——
+          所以开始把设计能力往代码这边接。直到今天，我还在学 Vue 3，每天学。
+        </p>
+
+        <ol class="timeline reveal">
+          <li>
+            <span class="timeline__year">2022</span>
+            <div>
+              <h4>湖北科技学院 · 产品设计</h4>
+              <p>离开贵阳去湖北读书，第一次完全独立生活。</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__year">2024</span>
+            <div>
+              <h4>开始自学前端</h4>
+              <p>从 HTML/CSS 起步，拆参考站的 Hero 首屏，一个一个复刻。</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__year">2026</span>
+            <div>
+              <h4>毕业 · 回到贵阳</h4>
+              <p>决定留在本地发展，把技术当主业，电商当副业。</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__year">Now</span>
+            <div>
+              <h4>求职中</h4>
+              <p>目标：前端开发 / Web 设计开发一体岗。作品集正在补齐。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">05 — 现在</p>
+      <h2 class="contact__title reveal">
+        有个岗位，<br />或者一个想法？
+      </h2>
+      <p class="contact__lead reveal">
+        贵阳本地或远程都行。简历、作品、细节，随时可以聊。
+      </p>
+
+      <div class="contact__grid reveal">
+        <a class="contact__item" href="tel:15629919878">
+          <span class="contact__label">电话</span>
+          <span class="contact__value">156 2991 9878</span>
+        </a>
+        <a class="contact__item" href="https://github.com/liangking108/lanps-work" target="_blank" rel="noopener">
+          <span class="contact__label">GitHub</span>
+          <span class="contact__value">@liangking108 ↗</span>
+        </a>
+        <a class="contact__item" href="#top">
+          <span class="contact__label">站点</span>
+          <span class="contact__value">LaNPswork.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span id="year">2026</span> 梁皓钧 / LaNPs</span>
+    <span class="footer__note">原生 HTML · CSS · JavaScript 手写，无框架</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
