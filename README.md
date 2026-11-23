@@ -34,7 +34,8 @@ lanps-work/
 │   ├── js/
 │   │   └── main.js       # 导航 / 滚动揭示 / 数字滚动 / 进度条 / 图集
 │   └── img/
-│       └── works/        # 设计作品预览与结构示意
+│       ├── works/        # 设计作品预览与结构示意
+│       └── motion-hud.svg # AI 影像区块的视觉示意
 └── README.md
 ```
 
@@ -44,13 +45,14 @@ lanps-work/
 
 | 要点 | 实现方式 |
 |---|---|
-| 响应式三端 | CSS 变量 + Grid/Flex + 4 个断点（1024 / 860 / 720） |
+| 响应式三端 | CSS 变量 + Grid/Flex + 3 个断点（1024 / 860 / 720） |
 | 滚动揭示动效 | `IntersectionObserver` + `.reveal` 类切换，只触发一次 |
 | 数字滚动 | `requestAnimationFrame` + easeOutCubic 缓动 |
 | 阅读进度 | `scrollHeight / innerHeight` 比值，rAF 节流 + `passive: true` |
 | 导航高亮 | 比较各 section 的 `getBoundingClientRect().top` |
 | 设计作品展示 | 主推作品 + 结构示意交错排版，WebP 缩略图按需加载 |
 | 作品图集 | 原生灯箱：缩略图切换、方向键翻页、Esc 关闭、焦点回归 |
+| AI 影像展示 | SVG 示意图 + 三张流程卡片，说明视频方案的工具链与叙事结构 |
 | 无障碍 | `prefers-reduced-motion` 降级、`:focus-visible`、`aria-*`、`skip-link` |
 | 语义化 | `header / main / section / article / ol` |
 
