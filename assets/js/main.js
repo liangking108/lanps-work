@@ -186,11 +186,51 @@
     { passive: true }
   );
 
-  /* ---------- 8. 页脚年份 ---------- */
+  /* ---------- 8. 邮箱一键复制 ---------- */
+  var copyBtn = document.querySelector('[data-copy-email]');
+
+  function flashCopied(btn) {
+    var original = btn.textContent;
+    btn.textContent = '已复制';
+    btn.classList.add('is-copied');
+    window.setTimeout(function () {
+      btn.textContent = original;
+      btn.classList.remove('is-copied');
+    }, 1800);
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var email = copyBtn.getAttribute('data-copy-email') || '';
+
+      function fallback() {
+        // 兼容非 HTTPS / 老浏览器：临时 textarea + execCommand
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); flashCopied(copyBtn); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(function () {
+          flashCopied(copyBtn);
+        }).catch(fallback);
+      } else {
+        fallback();
+      }
+    });
+  }
+
+  /* ---------- 9. 页脚年份 ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---------- 9. 首屏初始化 ---------- */
+  /* ---------- 10. 首屏初始化 ---------- */
   onScrollNav();
   onScrollProgress();
   syncActiveLink();
