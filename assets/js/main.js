@@ -489,3 +489,48 @@
     if (nav) nav.appendChild(toggle);
   });
 })();
+
+// ---------- Step 1: hero pointer parallax (Vibe theme only) ----------
+(function () {
+  var hero = document.querySelector('.hero');
+  var copy = document.querySelector('.hero__copy');
+  var stage = document.querySelector('.hero__stage');
+  if (!hero || !copy || !stage) return;
+
+  var enabled = window.matchMedia('(min-width: 921px)').matches &&
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!enabled) return;
+
+  var queued = false;
+  var x = 0;
+  var y = 0;
+
+  function render() {
+    var nx = x - 0.5;
+    var ny = y - 0.5;
+    copy.style.setProperty('--vibe-copy-x', (nx * -10).toFixed(2) + 'px');
+    copy.style.setProperty('--vibe-copy-y', (ny * -7).toFixed(2) + 'px');
+    stage.style.setProperty('--vibe-stage-x', (nx * 16).toFixed(2) + 'px');
+    stage.style.setProperty('--vibe-stage-y', (ny * 11).toFixed(2) + 'px');
+    queued = false;
+  }
+
+  hero.addEventListener('pointermove', function (event) {
+    if (document.documentElement.dataset.theme !== 'vibe') return;
+    var rect = hero.getBoundingClientRect();
+    x = (event.clientX - rect.left) / rect.width;
+    y = (event.clientY - rect.top) / rect.height;
+    if (!queued) {
+      queued = true;
+      requestAnimationFrame(render);
+    }
+  }, { passive: true });
+
+  hero.addEventListener('pointerleave', function () {
+    x = 0.5;
+    y = 0.5;
+    requestAnimationFrame(render);
+  });
+})();

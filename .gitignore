@@ -9,3 +9,4 @@ shots/
 serve.cjs
 qa.mjs
 qa-interactions.mjs
+.tmp-dtk/
