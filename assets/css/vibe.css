@@ -1073,7 +1073,10 @@ html[data-theme="vibe"] .btn--ghost:hover { border-color: rgba(255,47,109,.28) !
   html[data-theme="vibe"] .section-head__desc,
   html[data-theme="vibe"] .case__lead,
   html[data-theme="vibe"] .about__text,
-  html[data-theme="vibe"] .contact__lead { font-size: 15px !important; line-height: 1.78 !important; }
+  html[data-theme="vibe"] .contact__lead { color: #344054 !important; font-size: 15px !important; line-height: 1.78 !important; }
+  html[data-theme="vibe"] .contact__heading > .contact__lead { color: #344054 !important; font-size: 17px !important; line-height: 1.8 !important; }
+  html[data-theme="vibe"] .contact__heading > .contact__lead { color: #344054 !important; font-size: 17px !important; line-height: 1.8 !important; }
+.contact__heading .contact__lead { color: #344054 !important; font-size: 17px !important; line-height: 1.8 !important; }
   html[data-theme="vibe"] .project__desc { font-size: 14px !important; line-height: 1.78 !important; }
   html[data-theme="vibe"] .case__facts b { font-size: 15px !important; }
   html[data-theme="vibe"] .case__facts p { font-size: 13px !important; }
@@ -1092,3 +1095,89 @@ html[data-theme="vibe"] .btn--ghost:hover { border-color: rgba(255,47,109,.28) !
   html[data-theme="vibe"] .contact-card,
   html[data-theme="vibe"] .tool-card { transform: none !important; }
 }
+
+/* ---------- Step 5: accessible Vibe color system ---------- */
+:root {
+  --vibe-ink: #101828 !important;
+  --vibe-soft: #344054 !important;
+  --vibe-muted: #475467 !important;
+  --vibe-accent: #d61f55 !important;
+  --vibe-accent-2: #6d3fd4 !important;
+  --vibe-accent-3: #026aa2 !important;
+  --vibe-gradient: linear-gradient(135deg, #d61f55, #6d3fd4 45%, #026aa2) !important;
+}
+html[data-theme="vibe"] .hero__title-accent {
+  background: linear-gradient(110deg, #d61f55 0%, #6d3fd4 45%, #026aa2 78%, #d61f55 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+html[data-theme="vibe"] ::selection { background: #d61f55; color: #fff; }
+html[data-theme="vibe"] :focus-visible { outline-color: #d61f55; }
+
+/* Micro labels and status text */
+html[data-theme="vibe"] .section-head__label,
+html[data-theme="vibe"] .section-head__num,
+html[data-theme="vibe"] .case__meta,
+html[data-theme="vibe"] .case__eyebrow,
+html[data-theme="vibe"] .eyebrow,
+html[data-theme="vibe"] .project__index,
+html[data-theme="vibe"] .fit__label { color: #b9255a !important; }
+html[data-theme="vibe"] .terminal__prompt { color: #b9255a !important; }
+html[data-theme="vibe"] .status--live { color: #047857 !important; background: rgba(4,120,87,.08) !important; border-color: rgba(4,120,87,.14) !important; }
+html[data-theme="vibe"] .status--live i, html[data-theme="vibe"] .pulse { background: #059669 !important; box-shadow: none !important; }
+html[data-theme="vibe"] .terminal__status { color: #047857 !important; }
+html[data-theme="vibe"] .hero-window__online { color: #047857 !important; }
+html[data-theme="vibe"] .hero-window__online i { background: #059669 !important; }
+
+/* Secondary text */
+html[data-theme="vibe"] .hero__status,
+html[data-theme="vibe"] .terminal__bar,
+html[data-theme="vibe"] .terminal__cursor,
+html[data-theme="vibe"] .hero-window__status,
+html[data-theme="vibe"] .workbench__mode,
+html[data-theme="vibe"] .window__bar,
+html[data-theme="vibe"] .workbench__bar,
+html[data-theme="vibe"] .footer,
+html[data-theme="vibe"] .footer p,
+html[data-theme="vibe"] .footer a,
+html[data-theme="vibe"] .project__tags li,
+html[data-theme="vibe"] .chips li,
+html[data-theme="vibe"] .case__facts p,
+html[data-theme="vibe"] .timeline li p,
+html[data-theme="vibe"] .project__metrics small,
+html[data-theme="vibe"] .tool-card small,
+html[data-theme="vibe"] .tool-card__level,
+html[data-theme="vibe"] .contact-card span,
+html[data-theme="vibe"] .inspector-card__note { color: #475467 !important; }
+html[data-theme="vibe"] .footer__brand small { color: #475467 !important; }
+
+/* Contact lead was too light */
+
+/* Links and interactive accents */
+html[data-theme="vibe"] a,
+html[data-theme="vibe"] .text-link,
+html[data-theme="vibe"] .terminal__output a,
+html[data-theme="vibe"] .code-str { color: #b9255a !important; }
+html[data-theme="vibe"] .text-link:hover,
+html[data-theme="vibe"] .terminal__output a:hover { color: #d61f55 !important; }
+html[data-theme="vibe"] .terminal__output--accent { color: #026aa2 !important; }
+
+/* Timeline and code accents */
+html[data-theme="vibe"] .timeline li > span { color: #026aa2 !important; }
+html[data-theme="vibe"] .code-key, html[data-theme="vibe"] .code-var { color: #6d3fd4 !important; }
+html[data-theme="vibe"] .code-prop { color: #b9255a !important; }
+html[data-theme="vibe"] .code-muted { color: #64748b !important; }
+
+/* Window dots / hover borders */
+html[data-theme="vibe"] .window__dots i { background: #d61f55; }
+html[data-theme="vibe"] .window__dots i:nth-child(2) { background: #d97706; }
+html[data-theme="vibe"] .window__dots i:nth-child(3) { background: #047857; }
+html[data-theme="vibe"] .project::before,
+html[data-theme="vibe"] .case::before,
+html[data-theme="vibe"] .contact-card::before { background: linear-gradient(135deg, rgba(214,31,85,.48), rgba(109,63,212,.40), rgba(2,106,162,.48)); }
+html[data-theme="vibe"] .btn--ghost:hover,
+html[data-theme="vibe"] .tool-card:hover { border-color: rgba(214,31,85,.24) !important; }
+
+html[data-theme="vibe"] .contact__heading > p.contact__lead { color: #344054 !important; font-size: 17px !important; line-height: 1.8 !important; }
