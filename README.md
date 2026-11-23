@@ -77,7 +77,7 @@ git init
 git add .
 git commit -m "feat: LaNPs 作品集与工作台 v1"
 git branch -M main
-git remote add origin https://github.com/<你的用户名>/lanps-work.git
+git remote add origin https://github.com/liangking108/lanps-work.git
 git push -u origin main
 ```
 
