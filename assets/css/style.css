@@ -619,3 +619,7 @@ b,strong { font-weight: 600; color: var(--paper); }
   .project__index { justify-self: center; }
   .contact-card b { white-space: normal; overflow-wrap: anywhere; line-height: 1.55; }
 }
+
+/* Theme toggle */
+.theme-toggle { margin-left: 14px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.04); color: var(--text-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: .05em; cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
+.theme-toggle:hover { color: var(--paper); border-color: var(--blue); background: var(--blue-soft); }

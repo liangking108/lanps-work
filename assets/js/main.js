@@ -458,3 +458,34 @@
   onScrollProgress();
   syncActiveLink();
 })();
+// ---------- Theme switch: dark workbench / light vibe ----------
+(function () {
+  var key = 'lanps-theme';
+  var link = document.getElementById('themeStyle');
+  var toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'theme-toggle';
+  toggle.setAttribute('aria-label', '切换 Vibe 风格');
+  toggle.textContent = 'Vibe';
+
+  function apply(name) {
+    if (!link) return;
+    link.href = name === 'vibe' ? 'assets/css/vibe.css?v=1' : 'assets/css/style.css?v=3';
+    document.documentElement.dataset.theme = name;
+    toggle.setAttribute('aria-pressed', name === 'vibe' ? 'true' : 'false');
+    try { localStorage.setItem(key, name); } catch (e) {}
+  }
+
+  var saved = '';
+  try { saved = localStorage.getItem(key) || ''; } catch (e) {}
+  if (saved) apply(saved);
+
+  toggle.addEventListener('click', function () {
+    apply(document.documentElement.dataset.theme === 'vibe' ? 'dark' : 'vibe');
+  });
+
+  window.addEventListener('DOMContentLoaded', function () {
+    var nav = document.querySelector('.nav__inner');
+    if (nav) nav.appendChild(toggle);
+  });
+})();
