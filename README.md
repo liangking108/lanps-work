@@ -67,4 +67,4 @@ lanps-work/
 
 ---
 
-*站点：LaNPswork.com · 工具台：tools.LaNPswork.com*
+*站点：https://lanps-work.vercel.app · 工具台：https://lanps-tools.vercel.app*

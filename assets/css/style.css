@@ -409,6 +409,11 @@ b, strong {
   margin-top: clamp(36px, 5vw, 60px);
 }
 
+.hero__lead-wrap,
+.hero__lead {
+  min-width: 0;
+}
+
 .hero__lead {
   font-size: clamp(15px, 1.15vw, 17.5px);
   color: var(--text-1);
@@ -1636,7 +1641,7 @@ b, strong {
   }
 
   .hero__meta {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
   }
   .hero__actions {
