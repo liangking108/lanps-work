@@ -1,1 +1,13 @@
-ewogICIkc2NoZW1hIjogImh0dHBzOi8vb3BlbmFwaS52ZXJjZWwuc2gvdmVyY2VsLmpzb24iLAogICJjbGVhblVybHMiOiB0cnVlLAogICJ0cmFpbGluZ1NsYXNoIjogZmFsc2UsCiAgImhlYWRlcnMiOiBbCiAgICB7CiAgICAgICJzb3VyY2UiOiAiL2Fzc2V0cy8oLiopIiwKICAgICAgImhlYWRlcnMiOiBbCiAgICAgICAgeyAia2V5IjogIkNhY2hlLUNvbnRyb2wiLCAidmFsdWUiOiAicHVibGljLCBtYXgtYWdlPTMxNTM2MDAwLCBpbW11dGFibGUiIH0KICAgICAgXQogICAgfQogIF0KfQo=
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

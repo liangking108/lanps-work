@@ -1,1 +1,68 @@
-IyBMYU5QcyDigJQg5Liq5Lq65L2c5ZOB6ZuG5LiO5bel5L2c5Y+wCgo+IOaigeeak+mSpyAvIOS6p+WTgeiuvuiuoeWHuui6q+eahOW8gOWPkeiAhSAvIOi0temYswo+IOWOn+eUnyBIVE1MICsgQ1NTICsgSmF2YVNjcmlwdCDmiYvlhpnvvIzml6DmoYbmnrbjgIHml6Dkvp3otZbjgIHml6DmnoTlu7rmraXpqqTjgIIKCi0tLQoKIyMg5LiA44CB5pys5Zyw6aKE6KeICgrku7vpgInkuIDnp43vvIjlnKjpobnnm67moLnnm67lvZXmiafooYzvvInvvJoKCmBgYGJhc2gKIyBQeXRob24KcHl0aG9uIC1tIGh0dHAuc2VydmVyIDUxNzMKCiMgTm9kZQpucHggc2VydmUgLgoKIyDmiJbnm7TmjqXlj4zlh7sgaW5kZXguaHRtbApgYGAKCua1j+iniOWZqOaJk+W8gCA8aHR0cDovL2xvY2FsaG9zdDo1MTczPuOAggoKLS0tCgojIyDkuozjgIHmlofku7bnu5PmnoQKCmBgYApsYW5wcy13b3JrLwrilJzilIDilIAgaW5kZXguaHRtbCAgICAgICAgICAgICMg6aG16Z2i57uT5p6E77yI5Y2V6aG177yM5YiG5Yy65Z2X77yJCuKUnOKUgOKUgCBhc3NldHMvCuKUgiAgIOKUnOKUgOKUgCBjc3MvCuKUgiAgIOKUgiAgIOKUlOKUgOKUgCBzdHlsZS5jc3MgICAgICMg6K6+6K6h5Y+Y6YePIC8g54mI5byPIC8g5ZON5bqU5byPIC8g5peg6Zqc56KNCuKUgiAgIOKUnOKUgOKUgCBqcy8K4pSCICAg4pSCICAg4pSU4pSA4pSAIG1haW4uanMgICAgICAgIyDlr7zoiKogLyDmu5rliqjmj63npLogLyDmlbDlrZfmu5rliqggLyDov5vluqbmnaEgLyDlm77pm4YK4pSCICAg4pSU4pSA4pSAIGltZy8K4pSCICAgICAgIOKUlOKUgOKUgCB3b3Jrcy8gICAgICAgICMg6K6+6K6h5L2c5ZOB6aKE6KeI5LiO57uT5p6E56S65oSPCuKUlOKUgOKUgCBSRUFETUUubWQKYGBgCgotLS0KCiMjIOS4ieOAgeWunueOsOimgeeCuQoKfCDopoHngrkgfCDlrp7njrDmlrnlvI8gfAp8LS0tfC0tLXwKfCDlk43lupTlvI/kuInnq68gfCBDU1Mg5Y+Y6YePICsgR3JpZC9GbGV4ICsgNCDkuKrmlq3ngrnvvIgxMDI0IC8gODYwIC8gNzIw77yJIHwKfCDmu5rliqjmj63npLrliqjmlYggfCBgSW50ZXJzZWN0aW9uT2JzZXJ2ZXJgICsgYC5yZXZlYWxgIOexu+WIh+aNou+8jOWPquinpuWPkeS4gOasoSB8Cnwg5pWw5a2X5rua5YqoIHwgYHJlcXVlc3RBbmltYXRpb25GcmFtZWAgKyBlYXNlT3V0Q3ViaWMg57yT5YqoIHwKfCDpmIXor7vov5vluqYgfCBgc2Nyb2xsSGVpZ2h0IC8gaW5uZXJIZWlnaHRgIOavlOWAvO+8jHJBRiDoioLmtYEgKyBgcGFzc2l2ZTogdHJ1ZWAgfAp8IOWvvOiIqumrmOS6riB8IOavlOi+g+WQhCBzZWN0aW9uIOeahCBgZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCkudG9wYCB8Cnwg6K6+6K6h5L2c5ZOB5bGV56S6IHwg5Li75o6o5L2c5ZOBICsg57uT5p6E56S65oSP5Lqk6ZSZ5o6S54mI77yMV2ViUCDnvKnnlaXlm77mjInpnIDliqDovb0gfAp8IOS9nOWTgeWbvumbhiB8IOWOn+eUn+eBr+euse+8mue8qeeVpeWbvuWIh+aNouOAgeaWueWQkemUrue/u+mhteOAgUVzYyDlhbPpl63jgIHnhKbngrnlm57lvZIgfAp8IOaXoOmanOeijSB8IGBwcmVmZXJzLXJlZHVjZWQtbW90aW9uYCDpmY3nuqfjgIFgOmZvY3VzLXZpc2libGVg44CBYGFyaWEtKmDjgIFgc2tpcC1saW5rYCB8Cnwg6K+t5LmJ5YyWIHwgYGhlYWRlciAvIG1haW4gLyBzZWN0aW9uIC8gYXJ0aWNsZSAvIG9sYCB8CgotLS0KCiMjIOWbm+OAgemDqOe9su+8iFZlcmNlbO+8iQoKMS4gRnJhbWV3b3JrIFByZXNldCDpgIkgKipPdGhlcioqCjIuIEJ1aWxkIENvbW1hbmTjgIFPdXRwdXQgRGlyZWN0b3J5IOeVmeepugozLiBEZXBsb3kg4oaSIOW+l+WIsCBgKi52ZXJjZWwuYXBwYCDpk77mjqUKNC4g5aaC6ZyA6Ieq5a6a5LmJ5Z+f5ZCN77yM5ZyoICoqU2V0dGluZ3Mg4oaSIERvbWFpbnMqKiDmt7vliqDlubbmjInmj5DnpLrphY3nva4gRE5TCgotLS0KCirnq5nngrnvvJpMYU5Qc3dvcmsuY29tIMK3IOW3peWFt+WPsO+8mnRvb2xzLkxhTlBzd29yay5jb20qCg==
+# LaNPs — 个人作品集与工作台
+
+> 梁皓钧 / 产品设计出身的开发者 / 贵阳
+> 原生 HTML + CSS + JavaScript 手写，无框架、无依赖、无构建步骤。
+
+---
+
+## 一、本地预览
+
+任选一种（在项目根目录执行）：
+
+```bash
+# Python
+python -m http.server 5173
+
+# Node
+npx serve .
+
+# 或直接双击 index.html
+```
+
+浏览器打开 <http://localhost:5173>。
+
+---
+
+## 二、文件结构
+
+```
+lanps-work/
+├── index.html            # 页面结构（单页，分区块）
+├── assets/
+│   ├── css/
+│   │   └── style.css     # 设计变量 / 版式 / 响应式 / 无障碍
+│   ├── js/
+│   │   └── main.js       # 导航 / 滚动揭示 / 数字滚动 / 进度条 / 图集
+│   └── img/
+│       └── works/        # 设计作品预览与结构示意
+└── README.md
+```
+
+---
+
+## 三、实现要点
+
+| 要点 | 实现方式 |
+|---|---|
+| 响应式三端 | CSS 变量 + Grid/Flex + 4 个断点（1024 / 860 / 720） |
+| 滚动揭示动效 | `IntersectionObserver` + `.reveal` 类切换，只触发一次 |
+| 数字滚动 | `requestAnimationFrame` + easeOutCubic 缓动 |
+| 阅读进度 | `scrollHeight / innerHeight` 比值，rAF 节流 + `passive: true` |
+| 导航高亮 | 比较各 section 的 `getBoundingClientRect().top` |
+| 设计作品展示 | 主推作品 + 结构示意交错排版，WebP 缩略图按需加载 |
+| 作品图集 | 原生灯箱：缩略图切换、方向键翻页、Esc 关闭、焦点回归 |
+| 无障碍 | `prefers-reduced-motion` 降级、`:focus-visible`、`aria-*`、`skip-link` |
+| 语义化 | `header / main / section / article / ol` |
+
+---
+
+## 四、部署（Vercel）
+
+1. Framework Preset 选 **Other**
+2. Build Command、Output Directory 留空
+3. Deploy → 得到 `*.vercel.app` 链接
+4. 如需自定义域名，在 **Settings → Domains** 添加并按提示配置 DNS
+
+---
+
+*站点：LaNPswork.com · 工具台：tools.LaNPswork.com*

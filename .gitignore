@@ -1,1 +1,4 @@
-LkRTX1N0b3JlClRodW1icy5kYgoqLmxvZwpub2RlX21vZHVsZXMvCg==
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
