@@ -458,30 +458,48 @@
   onScrollProgress();
   syncActiveLink();
 })();
-// ---------- Theme switch: dark workbench / light vibe ----------
+// ---------- Theme switch: Vibe default / dark workbench ----------
 (function () {
   var key = 'lanps-theme';
   var link = document.getElementById('themeStyle');
   var toggle = document.createElement('button');
   toggle.type = 'button';
   toggle.className = 'theme-toggle';
-  toggle.setAttribute('aria-label', '切换 Vibe 风格');
   toggle.textContent = 'Vibe';
 
-  function apply(name) {
-    if (!link) return;
-    link.href = name === 'vibe' ? 'assets/css/vibe.css?v=1' : 'assets/css/style.css?v=3';
-    document.documentElement.dataset.theme = name;
+  function setMetaColor(name) {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', name === 'vibe' ? '#F8F9FC' : '#0B0D10');
+  }
+
+  function setToggle(name) {
     toggle.setAttribute('aria-pressed', name === 'vibe' ? 'true' : 'false');
-    try { localStorage.setItem(key, name); } catch (e) {}
+    toggle.setAttribute('aria-label', name === 'vibe' ? '切换到深色工作台' : '切换到 Vibe 风格');
+  }
+
+  function apply(name, options) {
+    if (!link) return;
+    options = options || {};
+    link.href = name === 'vibe' ? 'assets/css/vibe.css?v=2' : 'assets/css/style.css?v=3';
+    document.documentElement.dataset.theme = name;
+    setMetaColor(name);
+    setToggle(name);
+    if (options.save !== false) {
+      try { localStorage.setItem(key, name); } catch (e) {}
+    }
   }
 
   var saved = '';
   try { saved = localStorage.getItem(key) || ''; } catch (e) {}
-  if (saved) apply(saved);
+  apply(saved === 'dark' ? 'dark' : 'vibe', { save: false });
 
   toggle.addEventListener('click', function () {
-    apply(document.documentElement.dataset.theme === 'vibe' ? 'dark' : 'vibe');
+    var nextTheme = document.documentElement.dataset.theme === 'vibe' ? 'dark' : 'vibe';
+    document.body.classList.add('theme-switching');
+    apply(nextTheme);
+    window.setTimeout(function () {
+      document.body.classList.remove('theme-switching');
+    }, 450);
   });
 
   window.addEventListener('DOMContentLoaded', function () {

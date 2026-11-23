@@ -623,3 +623,13 @@ b,strong { font-weight: 600; color: var(--paper); }
 /* Theme toggle */
 .theme-toggle { margin-left: 14px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.04); color: var(--text-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: .05em; cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
 .theme-toggle:hover { color: var(--paper); border-color: var(--blue); background: var(--blue-soft); }
+
+/* Theme switch transition */
+body.theme-switching { transition: background-color .45s var(--ease), color .45s var(--ease) !important; }
+body.theme-switching .nav,
+body.theme-switching .section,
+body.theme-switching .project,
+body.theme-switching .case,
+body.theme-switching .workbench,
+body.theme-switching .terminal,
+body.theme-switching .contact-card { transition: background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease) !important; }

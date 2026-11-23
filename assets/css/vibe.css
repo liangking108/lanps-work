@@ -900,3 +900,85 @@ html[data-theme="vibe"] .contact-grid.is-visible .contact-card:nth-child(4) { tr
   html[data-theme="vibe"] .timeline li::before,
   html[data-theme="vibe"] .contact-card { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+/* ---------- Step 3: theme transition and light panel polish ---------- */
+html { color-scheme: light dark; }
+html[data-theme="vibe"] { color-scheme: light; }
+body.theme-switching { transition: background-color .45s var(--ease), color .45s var(--ease) !important; }
+body.theme-switching .nav,
+body.theme-switching .section,
+body.theme-switching .project,
+body.theme-switching .case,
+body.theme-switching .workbench,
+body.theme-switching .terminal,
+body.theme-switching .contact-card { transition: background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease) !important; }
+
+/* Vibe terminal and editor panels */
+html[data-theme="vibe"] .terminal {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%) !important;
+  border-color: rgba(17,24,39,.10) !important;
+  box-shadow: 0 24px 55px rgba(17,24,39,.08) !important;
+}
+html[data-theme="vibe"] .terminal__bar {
+  background: linear-gradient(90deg, rgba(255,47,109,.07), rgba(139,92,246,.07), rgba(14,165,233,.07)) !important;
+  color: var(--vibe-muted) !important;
+  font-size: 11px !important;
+}
+html[data-theme="vibe"] .terminal__status { color: #10b981 !important; font-size: 10px !important; }
+html[data-theme="vibe"] .terminal__body {
+  min-height: 300px;
+  padding: 28px clamp(20px,4vw,48px) 25px;
+  color: var(--vibe-soft) !important;
+  font-size: 13px !important;
+  line-height: 1.85 !important;
+}
+html[data-theme="vibe"] .terminal__prompt { color: #ff2f6d !important; }
+html[data-theme="vibe"] .terminal__output { color: #4b5563 !important; }
+html[data-theme="vibe"] .terminal__output--accent { color: #0ea5e9 !important; }
+html[data-theme="vibe"] .terminal__contact-line a {
+  color: #111827 !important;
+  text-decoration-color: rgba(255,47,109,.45) !important;
+}
+html[data-theme="vibe"] .terminal__cursor { color: var(--vibe-muted) !important; }
+
+html[data-theme="vibe"] .hero-window,
+html[data-theme="vibe"] .workbench {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%) !important;
+  border-color: rgba(17,24,39,.10) !important;
+  box-shadow: 0 24px 60px rgba(17,24,39,.08) !important;
+}
+html[data-theme="vibe"] .hero-window::before {
+  background: radial-gradient(circle, rgba(139,92,246,.18), transparent 65%) !important;
+}
+html[data-theme="vibe"] .window__bar,
+html[data-theme="vibe"] .workbench__bar {
+  background: linear-gradient(90deg, rgba(255,47,109,.06), rgba(139,92,246,.06), rgba(14,165,233,.06)) !important;
+  color: var(--vibe-muted) !important;
+}
+html[data-theme="vibe"] .hero-window__code { background: #ffffff; }
+html[data-theme="vibe"] .hero-window__status {
+  background: rgba(248,249,252,.9) !important;
+  color: var(--vibe-muted) !important;
+  font-size: 10px !important;
+}
+html[data-theme="vibe"] .window__dots i { background: #ff2f6d; }
+html[data-theme="vibe"] .window__dots i:nth-child(2) { background: #ffd166; }
+html[data-theme="vibe"] .window__dots i:nth-child(3) { background: #10b981; }
+
+/* Theme toggle state */
+html[data-theme="vibe"] .theme-toggle {
+  color: #fff !important;
+  background: var(--vibe-gradient) !important;
+  border-color: transparent !important;
+}
+html[data-theme="vibe"] .theme-toggle::after {
+  content: 'ON';
+  margin-left: 6px;
+  font-size: 10px;
+  letter-spacing: .06em;
+}
+html[data-theme="dark"] .theme-toggle { color: var(--text-soft); background: rgba(255,255,255,.04); border-color: var(--line); }
+
+@media (max-width: 720px) {
+  html[data-theme="vibe"] .terminal__body { min-height: 0; font-size: 11.5px !important; line-height: 1.75 !important; }
+}
