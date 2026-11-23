@@ -798,3 +798,105 @@ html[data-theme="vibe"] .eyebrow { color: #ff2f6d !important; }
   html[data-theme="vibe"] .hero__stage,
   html[data-theme="vibe"] .hero__copy { transform: none !important; transition: none !important; }
 }
+
+/* ---------- Step 2: staggered scroll motion (Vibe only) ---------- */
+html[data-theme="vibe"] .js .reveal { opacity: 0; transform: translateY(34px) scale(.985); transition: opacity .85s var(--ease), transform .85s var(--ease); }
+html[data-theme="vibe"] .js .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+html[data-theme="vibe"] .js .section-head__label.reveal { opacity: 0; transform: translateX(-26px); transition-property: opacity, transform; }
+html[data-theme="vibe"] .js .section-head__label.reveal.is-visible { opacity: 1; transform: translateX(0); }
+html[data-theme="vibe"] .js .section-head__main .reveal:nth-child(2) { transition-delay: .12s; }
+
+/* Projects */
+html[data-theme="vibe"] .js .project.reveal { opacity: 0; transform: translateY(46px) scale(.97); }
+html[data-theme="vibe"] .js .project.reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+html[data-theme="vibe"] .js .project--tools.reveal { transition-delay: .12s; }
+
+/* Design cases */
+html[data-theme="vibe"] .js .case.reveal { opacity: 0; transform: translateY(52px); }
+html[data-theme="vibe"] .js .case.reveal.is-visible { opacity: 1; transform: translateY(0); }
+html[data-theme="vibe"] .js .case--reverse.reveal { transition-delay: .11s; }
+html[data-theme="vibe"] .js .case__media img { transition: transform .9s var(--ease), filter .6s var(--ease); }
+
+/* Workbench and inner cards */
+html[data-theme="vibe"] .js .workbench.reveal { opacity: 0; transform: translateY(48px) scale(.98); }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+html[data-theme="vibe"] .workbench__explorer,
+html[data-theme="vibe"] .workbench__main,
+html[data-theme="vibe"] .workbench__inspector { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .workbench__explorer,
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .workbench__main,
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .workbench__inspector { opacity: 1; transform: translateY(0); }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .workbench__main { transition-delay: .09s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .workbench__inspector { transition-delay: .18s; }
+
+html[data-theme="vibe"] .tool-card,
+html[data-theme="vibe"] .capability-card,
+html[data-theme="vibe"] .inspector-card { opacity: 0; transform: translateY(18px) scale(.98); transition: opacity .55s var(--ease), transform .55s var(--ease), border-color .2s, background .2s, box-shadow .2s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card,
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .capability-card,
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .inspector-card { opacity: 1; transform: translateY(0) scale(1); }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card:nth-child(1) { transition-delay: .16s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card:nth-child(2) { transition-delay: .21s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card:nth-child(3) { transition-delay: .26s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card:nth-child(4) { transition-delay: .31s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card:nth-child(5) { transition-delay: .36s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .tool-card:nth-child(n+6) { transition-delay: .41s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .capability-card:nth-child(1) { transition-delay: .34s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .capability-card:nth-child(2) { transition-delay: .40s; }
+html[data-theme="vibe"] .js .workbench.reveal.is-visible .inspector-card:nth-child(2) { transition-delay: .28s; }
+
+/* Timeline */
+html[data-theme="vibe"] .timeline li { opacity: 0; transform: translateX(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+html[data-theme="vibe"] .timeline.is-visible li { opacity: 1; transform: translateX(0); }
+html[data-theme="vibe"] .timeline li:nth-child(1) { transition-delay: .06s; }
+html[data-theme="vibe"] .timeline li:nth-child(2) { transition-delay: .14s; }
+html[data-theme="vibe"] .timeline li:nth-child(3) { transition-delay: .22s; }
+html[data-theme="vibe"] .timeline li:nth-child(4) { transition-delay: .30s; }
+html[data-theme="vibe"] .timeline { border-image: linear-gradient(180deg, #ff2f6d, #8b5cf6, #0ea5e9) 1; }
+
+html[data-theme="vibe"] .timeline li::before { transform: scale(0); transition: transform .45s var(--ease) .1s, background .2s; }
+html[data-theme="vibe"] .timeline.is-visible li::before { transform: scale(1); }
+html[data-theme="vibe"] .timeline.is-visible li:nth-child(2)::before { transition-delay: .22s; }
+html[data-theme="vibe"] .timeline.is-visible li:nth-child(3)::before { transition-delay: .30s; }
+html[data-theme="vibe"] .timeline.is-visible li:nth-child(4)::before { transition-delay: .38s; }
+
+/* Contact */
+html[data-theme="vibe"] .contact-grid { display: grid; }
+html[data-theme="vibe"] .contact-card { opacity: 0; transform: translateY(26px); transition: opacity .75s var(--ease), transform .75s var(--ease), border-color .25s, background .25s, box-shadow .25s; }
+html[data-theme="vibe"] .contact-grid.is-visible .contact-card { opacity: 1; transform: translateY(0); }
+html[data-theme="vibe"] .contact-grid.is-visible .contact-card:nth-child(2) { transition-delay: .08s; }
+html[data-theme="vibe"] .contact-grid.is-visible .contact-card:nth-child(3) { transition-delay: .16s; }
+html[data-theme="vibe"] .contact-grid.is-visible .contact-card:nth-child(4) { transition-delay: .24s; }
+
+@media (max-width: 720px) {
+  html[data-theme="vibe"] .js .reveal,
+  html[data-theme="vibe"] .js .project.reveal,
+  html[data-theme="vibe"] .js .case.reveal,
+  html[data-theme="vibe"] .js .workbench.reveal { transform: translateY(24px); }
+  html[data-theme="vibe"] .js .section-head__label.reveal { transform: translateX(-12px); }
+  html[data-theme="vibe"] .tool-card,
+  html[data-theme="vibe"] .capability-card,
+  html[data-theme="vibe"] .timeline li,
+  html[data-theme="vibe"] .contact-card { transform: translateY(12px) scale(.99); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="vibe"] .js .reveal,
+  html[data-theme="vibe"] .js .reveal.is-visible,
+  html[data-theme="vibe"] .js .project.reveal,
+  html[data-theme="vibe"] .js .project.reveal.is-visible,
+  html[data-theme="vibe"] .js .case.reveal,
+  html[data-theme="vibe"] .js .case.reveal.is-visible,
+  html[data-theme="vibe"] .js .workbench.reveal,
+  html[data-theme="vibe"] .js .workbench.reveal.is-visible,
+  html[data-theme="vibe"] .workbench__explorer,
+  html[data-theme="vibe"] .workbench__main,
+  html[data-theme="vibe"] .workbench__inspector,
+  html[data-theme="vibe"] .tool-card,
+  html[data-theme="vibe"] .capability-card,
+  html[data-theme="vibe"] .inspector-card,
+  html[data-theme="vibe"] .timeline li,
+  html[data-theme="vibe"] .timeline li::before,
+  html[data-theme="vibe"] .contact-card { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

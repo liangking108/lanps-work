@@ -534,3 +534,29 @@
     requestAnimationFrame(render);
   });
 })();
+
+// ---------- Step 2: staggered scroll groups (Vibe theme only) ----------
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  var groups = document.querySelectorAll('.timeline, .contact-grid');
+  if (!groups.length) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+
+  groups.forEach(function (group) {
+    if (reduceMotion) {
+      group.classList.add('is-visible');
+    } else {
+      observer.observe(group);
+    }
+  });
+})();
