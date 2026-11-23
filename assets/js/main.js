@@ -226,28 +226,45 @@
     });
   }
 
-  /* ---------- 9.5 作品图集 ---------- */
+  /* ---------- 9.5 作品图集（多作品） ---------- */
   var gallery = document.getElementById('gallery');
   var galleryImage = document.getElementById('galleryImage');
   var galleryCaption = document.getElementById('galleryCaption');
   var galleryThumbs = document.getElementById('galleryThumbs');
-  var galleryItems = [
-    { src: 'assets/img/works/tongxin-main.webp', label: '主视觉 · 茶席全景' },
-    { src: 'assets/img/works/tongxin-top.webp', label: '同心双盘 · 俯视' },
-    { src: 'assets/img/works/tongxin-cups.webp', label: '双杯对饮 · 釉色对照' },
-    { src: 'assets/img/works/tongxin-scene.webp', label: '低角度 · 茶席氛围' },
-    { src: 'assets/img/works/tongxin-sheet.webp', label: '九图套图 · 总览' }
-  ];
+  var gallerySets = {
+    tongxin: {
+      title: '同心茶事',
+      items: [
+        { src: 'assets/img/works/tongxin-main.webp', label: '主视觉 · 茶席全景' },
+        { src: 'assets/img/works/tongxin-top.webp', label: '同心双盘 · 俯视' },
+        { src: 'assets/img/works/tongxin-cups.webp', label: '双杯对饮 · 釉色对照' },
+        { src: 'assets/img/works/tongxin-scene.webp', label: '低角度 · 茶席氛围' },
+        { src: 'assets/img/works/tongxin-sheet.webp', label: '九图套图 · 总览' }
+      ]
+    },
+    chuxiang: {
+      title: '触香',
+      items: [
+        { src: 'assets/img/works/chuxiang-main.webp', label: '主视觉 · 三支线香' },
+        { src: 'assets/img/works/chuxiang-top.webp', label: '俯视 · 三个插孔' },
+        { src: 'assets/img/works/chuxiang-scene.webp', label: '场景 · 暖光石台' },
+        { src: 'assets/img/works/chuxiang-explode.webp', label: '内部结构 · 爆炸图' },
+        { src: 'assets/img/works/chuxiang-board.webp', label: '设计展示页 · A3' }
+      ]
+    }
+  };
+  var activeSet = gallerySets.tongxin;
   var galleryIndex = 0;
   var lastFocused = null;
 
   function renderGallery() {
     if (!galleryImage || !galleryCaption || !galleryThumbs) return;
-    var item = galleryItems[galleryIndex];
+    var item = activeSet.items[galleryIndex];
     galleryImage.src = item.src;
-    galleryImage.alt = '同心茶事：' + item.label;
+    galleryImage.alt = activeSet.title + '：' + item.label;
     galleryCaption.textContent =
-      item.label + '  ·  ' + (galleryIndex + 1) + ' / ' + galleryItems.length;
+      activeSet.title + ' · ' + item.label + '  ·  ' +
+      (galleryIndex + 1) + ' / ' + activeSet.items.length;
 
     var thumbs = galleryThumbs.querySelectorAll('img');
     thumbs.forEach(function (img, i) {
@@ -255,9 +272,34 @@
     });
   }
 
-  function openGallery() {
+  function buildThumbnails() {
+    if (!galleryThumbs) return;
+    galleryThumbs.innerHTML = '';
+    activeSet.items.forEach(function (item, i) {
+      var thumb = document.createElement('img');
+      thumb.src = item.src;
+      thumb.alt = item.label;
+      (function (index) {
+        thumb.addEventListener('click', function () {
+          galleryIndex = index;
+          renderGallery();
+        });
+      })(i);
+      galleryThumbs.appendChild(thumb);
+    });
+  }
+
+  function openGallery(name, trigger) {
     if (!gallery) return;
-    lastFocused = document.activeElement;
+    var set = gallerySets[name];
+    if (!set) return;
+    activeSet = set;
+    galleryIndex = 0;
+    lastFocused = trigger || document.activeElement;
+    if (gallery.getAttribute('aria-label')) {
+      gallery.setAttribute('aria-label', set.title + '作品图集');
+    }
+    buildThumbnails();
     gallery.hidden = false;
     document.body.style.overflow = 'hidden';
     renderGallery();
@@ -273,26 +315,17 @@
   }
 
   function stepGallery(delta) {
-    galleryIndex = (galleryIndex + delta + galleryItems.length) % galleryItems.length;
+    galleryIndex = (galleryIndex + delta + activeSet.items.length) % activeSet.items.length;
     renderGallery();
   }
 
   if (gallery && galleryThumbs) {
-    galleryItems.forEach(function (item, i) {
-      var thumb = document.createElement('img');
-      thumb.src = item.src;
-      thumb.alt = item.label;
-      (function (index) {
-        thumb.addEventListener('click', function () {
-          galleryIndex = index;
-          renderGallery();
-        });
-      })(i);
-      galleryThumbs.appendChild(thumb);
+    var openBtns = document.querySelectorAll('[data-gallery-open]');
+    openBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openGallery(btn.getAttribute('data-gallery-open'), btn);
+      });
     });
-
-    var openBtn = document.querySelector('[data-gallery-open]');
-    if (openBtn) openBtn.addEventListener('click', openGallery);
 
     var closeBtn = gallery.querySelector('[data-gallery-close]');
     var prevBtn = gallery.querySelector('[data-gallery-prev]');

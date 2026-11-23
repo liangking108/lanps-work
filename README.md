@@ -34,7 +34,7 @@ lanps-work/
 │   ├── js/
 │   │   └── main.js       # 导航 / 滚动揭示 / 数字滚动 / 进度条 / 图集
 │   └── img/
-│       ├── works/        # 设计作品预览与结构示意
+│       ├── works/        # 两件完整作品的渲染图与图集（WebP）
 │       └── motion-hud.svg # AI 影像区块的视觉示意
 └── README.md
 ```
@@ -50,8 +50,8 @@ lanps-work/
 | 数字滚动 | `requestAnimationFrame` + easeOutCubic 缓动 |
 | 阅读进度 | `scrollHeight / innerHeight` 比值，rAF 节流 + `passive: true` |
 | 导航高亮 | 比较各 section 的 `getBoundingClientRect().top` |
-| 设计作品展示 | 主推作品 + 结构示意交错排版，WebP 缩略图按需加载 |
-| 作品图集 | 原生灯箱：缩略图切换、方向键翻页、Esc 关闭、焦点回归 |
+| 设计作品展示 | 两件完整作品左右图文卡，真实渲染主视觉，WebP 按需加载 |
+| 作品图集 | 多作品原生灯箱：按作品切换图集、缩略图、方向键翻页、Esc 关闭、焦点回归 |
 | AI 影像展示 | SVG 示意图 + 三张流程卡片，说明视频方案的工具链与叙事结构 |
 | 无障碍 | `prefers-reduced-motion` 降级、`:focus-visible`、`aria-*`、`skip-link` |
 | 语义化 | `header / main / section / article / ol` |
